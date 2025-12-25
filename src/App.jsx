@@ -1,14 +1,18 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import { Button } from './components/ui/ui/button'
+import Header from './components/ui/components/Header'
 
 function App() {
 
   return (
-    <div className='flex justify-center items-center h-100'>
-      <Button>Click me</Button>
+    <div className='h-screen flex flex-col'>
+      <div className="h-[20%]">
+        <Header />
+      </div>
+      <div className='flex justify-center items-center h-20'>
+        <Button>Click me</Button>
+      </div>
     </div>
   )
 }
