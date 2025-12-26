@@ -7,10 +7,10 @@ function App() {
 
   return (
     <div className='h-screen flex flex-col'>
-      <div className="h-[20%]">
+      <div className="h-[10%]">
         <Header />
       </div>
-      <div className='flex justify-center items-center'>
+      <div className='flex flex-1 items-center justify-center'>
         <Button>Click me</Button>
       </div>
     </div>
