@@ -10,7 +10,7 @@ function App() {
       <div className="h-[20%]">
         <Header />
       </div>
-      <div className='flex justify-center items-center h-20'>
+      <div className='flex justify-center items-center'>
         <Button>Click me</Button>
       </div>
     </div>
