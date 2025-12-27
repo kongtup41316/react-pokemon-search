@@ -2,18 +2,10 @@ import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 
 export default function ThemeToggle() {
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem("theme") === "dark";
-  });
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
+    document.documentElement.classList.toggle("dark", darkMode);
   }, [darkMode]);
 
   return (
@@ -26,7 +18,7 @@ export default function ThemeToggle() {
         rounded-full
         bg-gray-300 dark:bg-gray-600
         transition-colors duration-300
-        flex items-center
+        flex items-center cursor-pointer
       "
     >
       {/* Slider knob */}

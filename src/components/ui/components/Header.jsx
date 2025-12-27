@@ -1,14 +1,16 @@
 import DarkModeToggle from "./DarkModeToggle";
 
 export default function Header() {
-    return (
-        <div className="flex bg-blue-600 h-full flex-col">
-            <div className=" flex-1 flex items-center justify-center gap-4">
-                <h1>Search for Pokemon</h1>
-                <div>
-                    <DarkModeToggle />
-                </div>
-            </div>
-        </div>
-    )
+  return (
+    <div className="header bg-blue-600 h-16 w-full grid grid-cols-3 items-center px-4">
+      <div></div>
+      <h1 className="text-center text-white">
+        Search for Pokemon
+      </h1>
+      <div className="flex gap-3 items-center justify-end">
+        <span className="text-white">Darkmode-Button</span>
+        <DarkModeToggle />
+      </div>
+    </div>
+  );
 }
