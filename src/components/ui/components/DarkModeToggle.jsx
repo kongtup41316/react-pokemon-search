@@ -2,13 +2,18 @@ import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 
 export default function ThemeToggle() {
+  // start darkMode as false (false means light mode)
   const [darkMode, setDarkMode] = useState(false);
 
+  // this is callback function, it will run when darkMode changes
+  // it does not add dark into darkMode (but when darkMode changes, useEffect will start working)
   useEffect(() => {
     document.documentElement.classList.toggle("dark", darkMode);
+    //[darkMode] this darkmode mean when it changes then useEffect will run
   }, [darkMode]);
 
   return (
+    // button that will change darkMode state (triggered useEffect)
     <button
       onClick={() => setDarkMode(!darkMode)}
       aria-label="Toggle dark mode"
