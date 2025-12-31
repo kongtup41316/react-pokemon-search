@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-export default function Main() {
+export default function DarkMain() {
     const canvasRef = useRef(null);
 
     useEffect(() => {
@@ -46,18 +46,6 @@ export default function Main() {
         }
 
         let time = 0;
-        const mouse = { x: -1000, y: -1000 };
-        const repelDistance = 100;
-
-        canvas.addEventListener('mousemove', (e) => {
-            mouse.x = e.clientX;
-            mouse.y = e.clientY;
-        });
-
-        canvas.addEventListener('mouseleave', () => {
-            mouse.x = -1000;
-            mouse.y = -1000;
-        });
 
         function animate() {
             time += 0.01;
@@ -93,23 +81,9 @@ export default function Main() {
 
             // Draw and animate stars
             stars.forEach((star, i) => {
-                // Calculate distance from mouse
-                const dx = mouse.x - star.baseX;
-                const dy = mouse.y - star.baseY;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-
-                // Repel effect
-                let repelX = 0;
-                let repelY = 0;
-                if (distance < repelDistance) {
-                    const force = (repelDistance - distance) / repelDistance;
-                    repelX = -(dx / distance) * force * 30;
-                    repelY = -(dy / distance) * force * 30;
-                }
-
                 // Jiggle effect - random movement around base position
-                star.x = star.baseX + Math.sin(time * star.jiggleSpeed * 100 + i) * star.jiggleAmount + repelX;
-                star.y = star.baseY + Math.cos(time * star.jiggleSpeed * 80 + i) * star.jiggleAmount + repelY;
+                star.x = star.baseX + Math.sin(time * star.jiggleSpeed * 100 + i) * star.jiggleAmount;
+                star.y = star.baseY + Math.cos(time * star.jiggleSpeed * 80 + i) * star.jiggleAmount;
 
                 ctx.beginPath();
                 ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
@@ -158,11 +132,11 @@ export default function Main() {
                 ref={canvasRef}
                 className="absolute top-0 left-0 w-full h-full"
             />
-            <div className="absolute inset-0 flex items-center justify-center">
-                <div className="border border-black w-55 h-70 flex justify-center items-center rounded-full bg-white shadow-2xl">
+            {/* <div className="absolute inset-0 flex items-center justify-center">
+                <div className="border border-black w-55 h-70 flex justify-center items-center rounded-md bg-white shadow-2xl">
                     <p className="text-lg">hello</p>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 }
