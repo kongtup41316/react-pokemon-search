@@ -132,11 +132,6 @@ export default function DarkMain() {
                 ref={canvasRef}
                 className="absolute top-0 left-0 w-full h-full"
             />
-            {/* <div className="absolute inset-0 flex items-center justify-center">
-                <div className="border border-black w-55 h-70 flex justify-center items-center rounded-md bg-white shadow-2xl">
-                    <p className="text-lg">hello</p>
-                </div>
-            </div> */}
         </div>
     );
 }

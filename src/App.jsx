@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Header from './components/ui/components/Header'
 import DarkMain from './components/ui/components/DarkMain'
+import LightMain from './components/ui/components/LightMain'
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
         <Header />
       </div>
       <main className="flex flex-1">
-        <DarkMain />
+        <LightMain />
       </main>
     </div>
   )
