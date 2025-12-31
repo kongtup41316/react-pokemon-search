@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-import { Button } from './components/ui/ui/button'
 import Header from './components/ui/components/Header'
+import Main from './components/ui/components/Main'
 
 function App() {
 
@@ -10,8 +10,8 @@ function App() {
       <div className="h-[10%]">
         <Header />
       </div>
-      <div className='flex flex-1 items-center justify-center'>
-        <Button>Click me</Button>
+      <div className="flex flex-1">
+        <Main />
       </div>
     </div>
   )

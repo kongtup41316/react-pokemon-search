@@ -13,6 +13,7 @@ export default function ThemeToggle() {
   }, [darkMode]);
 
   return (
+    // this is the grey round square
     // button that will change darkMode state (triggered useEffect)
     <button
       onClick={() => setDarkMode(!darkMode)}
