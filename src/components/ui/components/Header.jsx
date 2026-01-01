@@ -7,10 +7,10 @@ export default function Header() {
       <h1 className="text-center text-white">
         Search for Pokemon
       </h1>
-      <div className="flex gap-3 items-center justify-end">
+      {/* <div className="flex gap-3 items-center justify-end">
         <span className="text-white">Darkmode-Button</span>
         <DarkModeToggle />
-      </div>
+      </div> */}
     </div>
   );
 }
