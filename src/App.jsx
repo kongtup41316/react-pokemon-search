@@ -4,6 +4,7 @@ import Header from './components/ui/components/Header'
 import DarkMain from './components/ui/components/DarkMain'
 import LightMain from './components/ui/components/LightMain'
 import DarkModeToggle from './components/ui/components/DarkModeToggle'
+import SearchSection from './components/ui/components/SearchSection'
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -16,7 +17,8 @@ function App() {
           <DarkModeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
         </Header>
       </div>
-      <main className="flex flex-1">
+      <main className="flex justify-center">
+        <SearchSection />
         {darkMode ? <DarkMain /> : <LightMain />}
       </main>
     </div>
