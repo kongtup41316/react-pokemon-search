@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 
-export default function ThemeToggle() {
-  // start darkMode as false (false means light mode)
-  const [darkMode, setDarkMode] = useState(false);
-
+export default function ThemeToggle({darkMode, setDarkMode}) {
   // this is callback function, it will run when darkMode changes
   // it does not add dark into darkMode (but when darkMode changes, useEffect will start working)
   useEffect(() => {
