@@ -8,6 +8,7 @@ import SearchSection from './components/ui/components/SearchSection'
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
+  const Theme = darkMode ? DarkMain : LightMain;
 
   return (
     <div className='h-screen flex flex-col'>
@@ -17,9 +18,10 @@ function App() {
           <DarkModeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
         </Header>
       </div>
-      <main className="flex justify-center">
-        <SearchSection />
-        {darkMode ? <DarkMain /> : <LightMain />}
+      <main>
+        <Theme>
+          <SearchSection />
+        </Theme>
       </main>
     </div>
   )
