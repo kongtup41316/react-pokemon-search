@@ -19,9 +19,10 @@ function App() {
         </Header>
       </div>
       <main>
-        <Theme>
+        <div className='flex flex-col items-center h-screen mt-10'>
           <SearchSection />
-        </Theme>
+          {/* <Theme /> */}
+        </div>
       </main>
     </div>
   )
