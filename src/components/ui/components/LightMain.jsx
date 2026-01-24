@@ -129,10 +129,10 @@ export default function BlueSkyMain() {
     }, []);
 
     return (
-        <div className="relative h-screen w-screen overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
             <canvas 
                 ref={canvasRef}
-                className="absolute top-0 left-0 w-full h-full"
+                className="w-full h-full"
             />
         </div>
     );

@@ -18,10 +18,10 @@ function App() {
           <DarkModeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
         </Header>
       </div>
-      <main>
-        <div className='flex flex-col items-center h-screen mt-10'>
+      <main className="relative h-screen overflow-hidden">
+        <Theme />
+        <div className='relative z-10 flex flex-col items-center h-full pt-10'>
           <SearchSection />
-          {/* <Theme /> */}
         </div>
       </main>
     </div>
