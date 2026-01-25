@@ -127,6 +127,10 @@ export default function DarkMain() {
     }, []);
 
     return (
+        // wtihout absolute(the canvas will use it default position as 300x150px 
+        // but now it depend on parent relative position which is main in App.jsx)
+        // pointer-events-none to make the canvas don't have any interaction(can't click or hover)
+        // inset-0 meaans top:0 right:0 left:0 bottom:0 (or just follow the parent relative position)
         <div className="absolute inset-0 pointer-events-none">
             <canvas 
                 ref={canvasRef}

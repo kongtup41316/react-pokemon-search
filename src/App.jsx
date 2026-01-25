@@ -20,7 +20,7 @@ function App() {
       </div>
       <main className="relative h-screen overflow-hidden">
         <Theme />
-        <div className='relative z-10 flex flex-col items-center h-full pt-10'>
+        <div className='relative flex justify-center pt-10'>
           <SearchSection />
         </div>
       </main>
