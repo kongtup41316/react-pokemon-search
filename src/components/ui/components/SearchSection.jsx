@@ -10,7 +10,7 @@ export default function SearchSection() {
                 <Button className="cursor-pointer bg-orange-400 dark:bg-orange-400 dark:text-white hover:bg-orange-500 dark:hover:bg-orange-500 transition-bg duration-200">search</Button>
             </div>
 
-            <OutputSection className="" />
+            <OutputSection />
         </div>
     )
 }
