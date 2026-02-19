@@ -8,11 +8,15 @@ import axios from "axios";
 export default function SearchSection() {
     const [userInput, setUserInput] = useState("");
     const [pokemonData, setPokemonData] = useState(null);
+    const [pokemonImage, setPokemonImage] = useState(null);
 
     const fetchPokemonData = async(input) => {
         try{
             const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${input.toLowerCase()}`);
-            setPokemonData(response.data);
+            setPokemonData(response.data.name);
+            // pokemon image url
+            setPokemonImage(response.data.sprites.front_default);
+            console.log(pokemonData);
         }
         catch(err){
             console.error("Error fetching data:", err);
@@ -35,7 +39,7 @@ export default function SearchSection() {
                     search
                 </Button>
             </div>
-            <OutputSection />
+            <OutputSection pokemonPhoto={pokemonImage} pokemonName={pokemonData} />
         </div>
     )
 }
